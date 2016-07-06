@@ -14,11 +14,16 @@ Main steps:
 
 ----------
 
-#### 1. Create new Developer Cloud Service Project ####
+#### 1. Open Developer Cloud Service ####
+
+One easy way to open the Developer Cloud Service Console to log in to Oracle Public Cloud and on the Dashboard click on hamburger icon on the developer tile. In the dropdown menu click on Open Service Console.
+![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/dashboard.png "Open Developer Cloud Service")
+
+#### 2. Create new Developer Cloud Service Project ####
 
 Log in to Oracle Developer Cloud Services and create a new project.
 
-![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/new.project.png "Create new Developer Clod Service project")
+![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/new.project.png "Create new Developer Cloud Service project")
 
 Enter the name of the project and set the desired properties. Click on **Next** and select *Initial Repository* as template.
 
@@ -31,7 +36,7 @@ Enter or copy the *https://github.com/oracle-weblogic/cloud.git* repository addr
 
 Now click on Finish to create the project and to clone the repository.
 
-### 2. Configure build job for sample application ###
+### 3. Configure build job for sample application ###
 
 Once the project provisioning is ready let's create the build job to compile and package the sample SpringBoot application to the desired format for Application Cloud Container services.
 
@@ -62,7 +67,7 @@ Click on **Save** to update the new job configurations. To check the build job c
 
 Please note the build job contains an extra build step which packs the default artifact (springbootdemo-0.0.1.jar) and manifest.json (ACCS descriptor from the *src/acc.resources* folder) into a zip archive. This archive is the desired format to deploy a Java application to ACCS.
 
-### 3. Configure Application Cloud Container service deployment ###
+### 4. Configure Application Cloud Container service deployment ###
 
 Now create deployment configuration which enable direct deployment to Application Cloud Container services after a successful build job.
 Change to **Deploy** page in DevCS and create **New Configuration** and set the following properties.
@@ -74,7 +79,7 @@ Change to **Deploy** page in DevCS and create **New Configuration** and set the 
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/deploy.config.png "Deployment Configuration")
 
-### 4. Build and deploy the sample application ###
+### 5. Build and deploy the sample application ###
 
 Now go back to **Build** tab and execute again the build job for SpringBoot sample application. Once the job execution is ready (this may take a while) log in to your Application Cloud Container Console and check the new instance created by DevCS. Click on the URL to access your application.
 
