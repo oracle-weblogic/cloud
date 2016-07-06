@@ -16,7 +16,7 @@ Main steps:
 
 #### 1. Open Developer Cloud Service ####
 
-One easy way to open the Developer Cloud Service Console to log in to Oracle Public Cloud and on the Dashboard click on hamburger icon on the developer tile. In the dropdown menu click on Open Service Console.
+One easy way to open the Developer Cloud Service Console to sign in to [Oracle Public Cloud](https://cloud.oracle.com/en_US/sign-in). First select your datacenter then provide the identity domain and credentials. After a successful login you will see your Dashboard. Find the Developer services tile and click on the hamburger. In the dropdown menu click on Open Service Console.
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/dashboard.png "Open Developer Cloud Service")
 
 #### 2. Create new Developer Cloud Service Project ####
@@ -53,7 +53,7 @@ Change to the **Source Control** tab and select **Git**. In the git's properties
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/job.source.control.png "Configure job")
 
-Change to **Build Steps** tab and add **Maven 3** build step. Enter **clean install** as Goals and **acc/springboot-sample/pom.xml** to POM File field.
+Change to **Build Steps** tab and add **Maven 3** build step. Enter **clean install** as Goals and **acc/springboot-sample/pom.xml** to POM File field. (In case if Build Steps tab just shows **Loading...** long time ago, save the Build configuration then re-open and continue.)
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/job.build.steps.png "Configure job")
 
@@ -81,6 +81,24 @@ Change to **Deploy** page in DevCS and create **New Configuration** and set the 
 
 ### 5. Build and deploy the sample application ###
 
-Now go back to **Build** tab and execute again the build job for SpringBoot sample application. Once the job execution is ready (this may take a while) log in to your Application Cloud Container Console and check the new instance created by DevCS. Click on the URL to access your application.
+Now go back to **Build** tab and execute again the build job for SpringBoot sample application. Once the job execution is ready (this may take a while) go back to your Dashboard and open Application Cloud Container Console. Note: if you can not see Application Cloud Container Services tile you need to switch back to the original dashboard where you can find ACCS section.
+
+![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/switch.dashboard.png "Switch dashboard")
+
+Search the Application Cloud Container frame and click on  Service Console.
+
+![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/old.dashboard.png "Old dashboard")
+
+Check the new instance created by DevCS and click on the URL to access your application.
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/acc.console.png "ACC Console")
+
+After this setup build execution triggers a new(re) deployment to ACCS. There are many other option to trigger this deployment. For example build can be triggered by source changes or can be scheduled to specific time of the day.
+
+### + Optional step: Make changes in the application ###
+
+Prerequisites: Git client, Text editor
+
+Clone your newly created Git repository hosted on Developer Cloud Service to your local machine using basic or your favourite Git tool. Make small changes for example in the JSP file. Push changes to DevCS remote repository, execute Build again and check the changes on the redeployed application.
+
+
