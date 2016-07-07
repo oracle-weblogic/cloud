@@ -1,6 +1,6 @@
-## Deploy SpringBoot demo application to Application Cloud Container Services using Developer Cloud Services ##
+## Deploy SpringBoot demo application to Application Container Cloud Services using Developer Cloud Services ##
 
-This demo conatins a simple SpringBoot application which will deployed on Application Cloud Container Services.
+This demo conatins a simple SpringBoot application which will deployed on Application Container Cloud Services.
 
 The SpringBoot sample application is a web application serving one simple JSP page.
 
@@ -9,8 +9,9 @@ Main steps:
 - Get Oracle Cloud Services account (contains DevCS and ACCS)
 - Create new project in DevCS
 - Configure build job for sample application
-- Configure Application Cloud Container service deployment in DevCS
+- Configure Application Container Cloud service deployment in DevCS
 - Build and deploy sample application
+- 
 
 ----------
 
@@ -38,7 +39,7 @@ Now click on Finish to create the project and to clone the repository.
 
 ### 3. Configure build job for sample application ###
 
-Once the project provisioning is ready let's create the build job to compile and package the sample SpringBoot application to the desired format for Application Cloud Container services.
+Once the project provisioning is ready let's create the build job to compile and package the sample SpringBoot application to the desired format for Application Container Cloud services.
 
 Select **Build** page and click on the **New Job** button.
 
@@ -67,25 +68,25 @@ Click on **Save** to update the new job configurations. To check the build job c
 
 Please note the build job contains an extra build step which packs the default artifact (springbootdemo-0.0.1.jar) and manifest.json (ACCS descriptor from the *src/acc.resources* folder) into a zip archive. This archive is the desired format to deploy a Java application to ACCS.
 
-### 4. Configure Application Cloud Container service deployment ###
+### 4. Configure Application Container Cloud service deployment ###
 
-Now create deployment configuration which enable direct deployment to Application Cloud Container services after a successful build job.
+Now create deployment configuration which enable direct deployment to Application Container Cloud services after a successful build job.
 Change to **Deploy** page in DevCS and create **New Configuration** and set the following properties.
 
 - **Configuration Name**: any name to identify deployment configuration
 - **Application Name**: instance name in ACCS
-- **Deployment Target**: click on New and select Application Cloud Container... and define connection properties such as **Data center**, **Identity Domain** and **credentials**. 
+- **Deployment Target**: click on New and select Application Container Cloud... and define connection properties such as **Data center**, **Identity Domain** and **credentials**. 
 - **Type**: select **Automatic** which means auto deploy after a successful execution of the build job. Select your previously created job and its artifact to deploy.
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/deploy.config.png "Deployment Configuration")
 
 ### 5. Build and deploy the sample application ###
 
-Now go back to **Build** tab and execute again the build job for SpringBoot sample application. Once the job execution is ready (this may take a while) go back to your Dashboard and open Application Cloud Container Console. Note: if you can not see Application Cloud Container Services tile you need to switch back to the original dashboard where you can find ACCS section.
+Now go back to **Build** tab and execute again the build job for SpringBoot sample application. Once the job execution is ready (this may take a while) go back to your Dashboard and open Application Container Cloud Console. Note: if you can not see Application Container Cloud Services tile you need to switch back to the original dashboard where you can find ACCS section.
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/switch.dashboard.png "Switch dashboard")
 
-Search the Application Cloud Container frame and click on  Service Console.
+Search the Application Container Cloud frame and click on  Service Console.
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/old.dashboard.png "Old dashboard")
 
