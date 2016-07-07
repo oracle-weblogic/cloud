@@ -11,7 +11,6 @@ Main steps:
 - Configure build job for sample application
 - Configure Application Container Cloud service deployment in DevCS
 - Build and deploy sample application
-- 
 
 ----------
 
