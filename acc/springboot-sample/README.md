@@ -54,7 +54,7 @@ Change to the **Source Control** tab and select **Git**. In the git's properties
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/job.source.control.png "Configure job")
 
-Change to **Build Steps** tab and add **Maven 3** build step. Enter **clean install** as Goals and **acc/springboot-sample/pom.xml** to POM File field. (In case if Build Steps tab just shows **Loading...** long time ago, save the Build configuration then re-open and continue.)
+Change to **Build Steps** tab and add **Maven 3** build step. Enter **clean install** as Goals and **acc/springboot-sample/pom.xml** to POM File field. (In case if Build Steps tab just shows **Loading...** for a long time, save the Build configuration then re-open and continue.)
 
 ![alt text](https://github.com/oracle-weblogic/cloud/blob/master/acc/springboot-sample/md.resources/job.build.steps.png "Configure job")
 
